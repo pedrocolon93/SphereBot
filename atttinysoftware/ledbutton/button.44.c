@@ -31,13 +31,19 @@ int main (void)
 //    if (READ(B, 5) == HIGH)
     INPUT(A,3);
     OUTPUT(B,2);
+    PORTA = 0xFF;
     while (1) {
-        if(READ(A,3)){
-            SET(B,2);
-        }
-        else {
-            CLEAR(B,2);
-        }
+        
+        CLEAR(B,2);
+	if(LOW==READ(A,3)){
+		SET(B,2);
+		_delay_ms(50);
+CLEAR(B,2);
+_delay_ms(50);
+SET(B,2);
+_delay_ms(50);
+
+	}
     }
 
 return 1;
