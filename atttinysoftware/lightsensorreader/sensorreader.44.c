@@ -67,7 +67,7 @@ int main()
         adc_result0 = adc_read(3);      // read adc value at PA0
            
         if(adc_result0 < 256)
-		{
+		{cd 
 			CLEAR(B,2);
 		}
 
