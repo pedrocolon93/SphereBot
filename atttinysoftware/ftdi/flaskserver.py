@@ -1,7 +1,12 @@
 from flask import Flask
 import sys,time,serial
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static/')
+
+@app.route('/')
+def root():
+
+    return app.send_static_file('index.html')
 
 @app.route("/toggle",methods = ['POST', 'GET'])
 def hello():
