@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle LED</title>
+    <script src="jquery-3.1.1.min.js"></script>
+</head>
+
+   <body>
+        <script>
+            function proceed () {
+                $.post("http://localhost:5000/toggle", function(data, status){
+                    //alert("Data: " + data + "\nStatus: " + status);
+                });
+                alert("Done");
+            }
+        </script>
+         <button type="button" onclick="proceed();">Toggle LED</button>
+
+   </body>
+</html>
