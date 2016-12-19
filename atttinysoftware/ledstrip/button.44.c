@@ -21,25 +21,29 @@
 
 int main (void)
 {
-    // set PB3 to be output
+    	OUTPUT(A,0);
+	OUTPUT(A,1);
+	OUTPUT(A,2);
+	OUTPUT(A,3);
 
-//    OUTPUT(D, 3); // port D, pin 3 as output
-//    SET(D, 3); // set port D pin 3 to HIGH
-//    CLEAR(D, 3); // set it to LOW
-//
-//    INPUT(B, 5);
-//    if (READ(B, 5) == HIGH)
-    OUTPUT(A,0);
-
-    PORTA = 0x00;
-    while (1) {
-        
-        
+    	PORTA = 0x00;
+	while (1) {
+		_delay_ms(50);        
 		SET(A,0);
-		
-
+		_delay_ms(1000);
+		CLEAR(A,0);
+		_delay_ms(50);        
+		SET(A,1);
+		_delay_ms(1000);
+		CLEAR(A,1);
+		_delay_ms(50);        
+		SET(A,2);
+		_delay_ms(1000);
+		CLEAR(A,2);
+		_delay_ms(50);        
+		SET(A,3);
+		_delay_ms(1000);
+		CLEAR(A,3);
 	}
-    
-
-return 1;
+	return 1;
 }
